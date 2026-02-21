@@ -1,26 +1,72 @@
+/* ===== Base ===== */
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.5;
 }
 
-.container {
-    width: min(1100px, 100% -2rem);
+img {
+    max-width: 100%;
+    display: block;
 }
 
-.site-header, .site-footer {
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+/* Spacing sections */
+section {
+    padding: 2rem 0;
+}
+
+/* ===== Header ===== */
+.site-header {
     padding: 1rem 0;
     border-bottom: 1px solid #ddd;
 }
 
-.site-footer {
-    border-top: 1px solid #ddd;
-    border-bottom: none;
-    margin-top: 2rem;
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-section {
-    padding: 2rem;
+.brand {
+    text-decoration: none;
+    font-weight: 700;
+    color: inherit;
+}
+
+/* Nav list reset */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    outline: none;
+    background: #eee;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid #ddd;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
 }
