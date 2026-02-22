@@ -24,3 +24,99 @@ body {
 section {
     padding: 2rem;
 }
+
+/* ===== Cards layout ===== */
+.cards {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cards article {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ===== Team layout ===== */
+.team {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.team article {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ===== Gallery layout ===== */
+.gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+.testimonials {
+    margin-top: 2rem;
+}
+
+.testimonials blockquote {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid #ccc;
+    background: #f9f9f9;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 768px) {
+
+.cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.team {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+/* ===== Gallery images ===== */
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ==== mobile header adjustement ==== */
+@media (max-width: 767px) {
+
+.site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.main-nav li {
+    width: 100%;
+}
+
+.main-nav a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+}
