@@ -1,10 +1,28 @@
-/* ===== Base ===== */
+/* === Theme + Base == */
+
 * { box-sizing: border-box; }
+
+:root {
+    --color-bg: #0a0a0a;
+    --color-surface: #151515;
+    --color-text: #ffffff;
+    --color-muted: #b3b3b3;
+
+    --color-pink: #ff3c6f;
+    --color-purple: #8a2be2;
+    --color-blue: #00bfff;
+
+    --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.5;
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 img {
@@ -17,15 +35,37 @@ img {
     margin-inline: auto;
 }
 
-/* Spacing sections */
-section {
-    padding: 2rem 0;
+/* Typography spacing */
+h1, h2, h3 { margin: 0 0 0.75rem 0; }
+p { margin: 0 0 1rem 0; }
+
+/* Gradient titles */
+h1, h2 {
+    background: linear-gradient(90deg, var(--color-pink), var(--color-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* ===== Header ===== */
+/* Section spacing */
+section { padding: 3rem 0; }
+
+.hero { padding: 3.5rem 0; }
+
+/* Focus visible (accessibilité clavier) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* == Header + Nav == */
+
 .site-header {
     padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(135deg, var(--color-pink), var(--color-purple), var(--color-blue));
 }
 
 .site-header .container {
@@ -38,10 +78,9 @@ section {
 .brand {
     text-decoration: none;
     font-weight: 700;
-    color: inherit;
+    color: #fff;
 }
 
-/* Nav list reset */
 .main-nav ul {
     list-style: none;
     margin: 0;
@@ -53,7 +92,7 @@ section {
 
 .main-nav a {
     text-decoration: none;
-    color: inherit;
+    color: #fff;
     padding: 0.25rem 0.5rem;
     border-radius: 6px;
 }
@@ -61,93 +100,11 @@ section {
 .main-nav a:hover,
 .main-nav a:focus-visible {
     outline: none;
-    background: #eee;
+    background: rgba(255,255,255,0.2);
 }
 
-/* Footer */
-.site-footer {
-    border-top: 1px solid #ddd;
-    margin-top: 2rem;
-}
-
-section {
-    padding: 2rem;
-}
-
-/* ===== Cards layout ===== */
-.cards {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.cards article {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-/* ===== Team layout ===== */
-.team {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.team article {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-/* ===== Gallery layout ===== */
-.gallery {
-    display: grid;
-    gap: 1rem;
-}
-
-.gallery figure {
-    margin: 0;
-}
-
-.testimonials {
-    margin-top: 2rem;
-}
-
-.testimonials blockquote {
-    margin: 0 0 1rem 0;
-    padding: 1rem;
-    border-left: 4px solid #ccc;
-    background: #f9f9f9;
-}
-
-/* ===== Responsive ===== */
-@media (min-width: 768px) {
-
-.cards {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.team {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-}
-
-/* ===== Gallery images ===== */
-
-.gallery img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* ==== mobile header adjustement ==== */
+/* == Mobile header == */
 @media (max-width: 767px) {
-
 .site-header .container {
     flex-direction: column;
     align-items: flex-start;
@@ -159,9 +116,7 @@ section {
     margin-top: 1rem;
 }
 
-.main-nav li {
-    width: 100%;
-}
+.main-nav li { width: 100%; }
 
 .main-nav a {
     display: block;
@@ -170,42 +125,59 @@ section {
 }
 }
 
-/* ===== Global polish ===== */
-html { scroll-behavior: smooth; }
+/* == Cards / Team == */
 
-section {
-    padding: 3rem 0;
+.cards,
+.team {
+    display: grid;
+    gap: 1.5rem;
 }
 
-.hero {
-    padding: 3.5rem 0;
+.cards article,
+.team article {
+    padding: 1rem;
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Titles spacing */
-h1, h2, h3 { margin: 0 0 0.75rem 0; }
-p { margin: 0 0 1rem 0; }
-
-/* Links focus visible (clavier) */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 3px;
+.cards article:hover,
+.team article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.55);
 }
 
-/* ===== Improve gallery images ===== */
+/* == Gallery / Testimonials == */
+
+.gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.gallery figure { margin: 0; }
+
 .gallery img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: var(--radius);
 }
 
-/* ===== Contact form polish ===== */
-form {
-    margin-top: 1.25rem;
+.testimonials { margin-top: 2rem; }
+
+.testimonials blockquote {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.06);
+    border-radius: var(--radius);
 }
+
+/* == Form == */
+
+form { margin-top: 1.25rem; }
 
 .form-row {
     display: grid;
@@ -213,21 +185,47 @@ form {
     margin-bottom: 1rem;
 }
 
-input, textarea, button {
-    font: inherit;
-}
+input, textarea, button { font: inherit; }
 
 input, textarea {
     padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,0.06);
+    color: var(--color-text);
 }
 
 button {
     padding: 0.75rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: var(--radius);
     cursor: pointer;
+
+    background: linear-gradient(90deg, var(--color-pink), var(--color-purple));
+    color: #fff;
+    border: none;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-button:hover { filter: brightness(0.95); }
+button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--color-pink);
+}
+
+/* == Footer == */
+
+.site-footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    color: var(--color-muted);
+}
+
+/* == Responsive grids == */
+
+@media (min-width: 768px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .team { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+}
