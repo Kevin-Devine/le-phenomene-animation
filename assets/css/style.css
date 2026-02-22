@@ -42,7 +42,9 @@ p { margin: 0 0 1rem 0; }
 /* Gradient titles */
 h1, h2 {
     background: linear-gradient(90deg, var(--color-pink), var(--color-blue));
+    background-clip: text;
     -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -259,4 +261,16 @@ button:hover {
     .cards { grid-template-columns: repeat(2, 1fr); }
     .team { grid-template-columns: repeat(2, 1fr); }
     .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* == contact ==*/ 
+
+.contact-mail {
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-blue);
+}
+
+.contact-mail:hover {
+    color: var(--color-blue);
 }
