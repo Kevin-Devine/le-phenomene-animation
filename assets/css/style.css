@@ -66,6 +66,10 @@ textarea:focus-visible {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     background: linear-gradient(135deg, var(--color-pink), var(--color-purple), var(--color-blue));
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
 }
 
 .site-header .container {
@@ -141,12 +145,39 @@ textarea:focus-visible {
     border: 1px solid rgba(255,255,255,0.06);
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
 }
 
 .cards article:hover,
 .team article:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 34px rgba(0,0,0,0.55);
+}
+
+.team img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+
+    border: 3px solid var(--color-purple);
+
+    box-shadow: 
+    0 0 10px var(--color-purple),
+    0 0 20px var(--color-purple),
+    0 0 35px rgba(138,43,226,0.4);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team article:hover img {
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 15px var(--color-pink),
+    0 0 30px var(--color-pink),
+    0 0 50px rgba(255, 60, 111, 0.5);
 }
 
 /* == Gallery / Testimonials == */
