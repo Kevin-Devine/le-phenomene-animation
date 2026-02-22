@@ -120,3 +120,65 @@ section {
     padding: 0.5rem 0;
 }
 }
+
+/* ===== Global polish ===== */
+html { scroll-behavior: smooth; }
+
+section {
+    padding: 3rem 0;
+}
+
+.hero {
+    padding: 3.5rem 0;
+}
+
+/* Titles spacing */
+h1, h2, h3 { margin: 0 0 0.75rem 0; }
+p { margin: 0 0 1rem 0; }
+
+/* Links focus visible (clavier) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* ===== Improve gallery images ===== */
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ===== Contact form polish ===== */
+form {
+    margin-top: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+input, textarea, button {
+    font: inherit;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover { filter: brightness(0.95); }
