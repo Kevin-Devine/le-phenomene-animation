@@ -68,5 +68,166 @@ section {
 .site-footer {
     border-top: 1px solid #ddd;
     margin-top: 2rem;
-    padding: 1.5rem 0;
 }
+
+section {
+    padding: 2rem;
+}
+
+/* ===== Cards layout ===== */
+.cards {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cards article {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ===== Team layout ===== */
+.team {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.team article {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ===== Gallery layout ===== */
+.gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+.testimonials {
+    margin-top: 2rem;
+}
+
+.testimonials blockquote {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border-left: 4px solid #ccc;
+    background: #f9f9f9;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 768px) {
+
+.cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.team {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+/* ===== Gallery images ===== */
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ==== mobile header adjustement ==== */
+@media (max-width: 767px) {
+
+.site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.main-nav li {
+    width: 100%;
+}
+
+.main-nav a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+}
+
+/* ===== Global polish ===== */
+html { scroll-behavior: smooth; }
+
+section {
+    padding: 3rem 0;
+}
+
+.hero {
+    padding: 3.5rem 0;
+}
+
+/* Titles spacing */
+h1, h2, h3 { margin: 0 0 0.75rem 0; }
+p { margin: 0 0 1rem 0; }
+
+/* Links focus visible (clavier) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* ===== Improve gallery images ===== */
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ===== Contact form polish ===== */
+form {
+    margin-top: 1.25rem;
+}
+
+.form-row {
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+input, textarea, button {
+    font: inherit;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover { filter: brightness(0.95); }
