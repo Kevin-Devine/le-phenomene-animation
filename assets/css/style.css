@@ -246,6 +246,14 @@ button:hover {
     box-shadow: 0 0 15px var(--color-pink);
 }
 
+.hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* == Footer == */
 
 .site-footer {
