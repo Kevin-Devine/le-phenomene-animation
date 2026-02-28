@@ -111,23 +111,40 @@ textarea:focus-visible {
 
 /* == Mobile header == */
 @media (max-width: 767px) {
+.site-header {
+    position: static;   /*desactivation sticky sur mobile*/ 
+    top: auto;
+    padding-block: 0.5rem;
+}
+
 .site-header .container {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.site-header img {
+    max-width: 44px;
+    height: auto;
 }
 
 .main-nav ul {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 0;
+    gap: 0.5rem;
 }
 
-.main-nav li { width: 100%; }
+.main-nav li { 
+    width: auto; 
+}
 
 .main-nav a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0;
+    display: inline-block;
+    width: auto;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.95rem;
 }
 }
 
@@ -198,9 +215,8 @@ textarea:focus-visible {
     border-radius: var(--radius);
 }
 
-.testimonials { margin-top: 2rem; }
-
 .testimonials blockquote {
+    margin-top: 2rem;
     margin: 0 0 1rem 0;
     padding: 1rem;
     border-left: 4px solid rgba(255,255,255,0.25);
